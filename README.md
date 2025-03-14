@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# Musik-Timeline App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+The Musik-Timeline App allows users to create their own music timeline by logging in with their Spotify account. Track your favorite artists, songs, and more! This app leverages the Spotify API to fetch data about users' top tracks and libraries.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Spotify Authentication**: Secure login via Spotify.
+- **Track Your Music**: View your top artists and tracks.
+- **Personalized Timeline**: Display your favorite songs and artists in a dynamic timeline.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Requirements
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Node.js (version 16 or higher)
+- React (version 18 or higher)
+- Material UI (MUI v5 or later)
+- Spotify Developer Account (it's free, don't worry)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/your-username/music-timeline-app.git
+    cd music-timeline-app
+    ```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3. Set up your Spotify API credentials:
+    - Create a [Spotify Developer Account](https://developer.spotify.com/).
+    - Create an app to get your `clientId` and `redirectUri`.
+    - Replace the values in `SpotifyAuth.tsx` (clientId and redirectUri).
+
+4. Run the app locally:
+    ```bash
+    npm start
+    ```
+
+5. The app will be available at `http://localhost:5173`.
+
+## How it Works
+
+- The app uses Spotify's authorization endpoint to authenticate the user and obtain access tokens.
+- Once authenticated, users can view their top tracks and artists, based on the permissions granted.
+
+## Code Example
+
+```tsx
+import React from "react";
+import { Container, Typography, Button, Box } from "@mui/material";
+
+const SpotifyAuth: React.FC = () => {
+  const clientId = "YOUR_SPOTIFY_CLIENT_ID";
+  const redirectUri = "http://localhost:5173/callback";
+  const scope = "user-top-read user-library-read";
+  const responseType = "token";
+
+  const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`;
+
+  return (
+    <Container maxWidth="sm" sx={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100vh" }}>
+      <Box sx={{ textAlign: "center", marginBottom: 4, padding: 4, backgroundColor: "#ffffff", borderRadius: 4, boxShadow: 2 }}>
+        <Typography variant="h3" sx={{ fontWeight: "bold", marginBottom: 2, color: "#1DB954" }}>
+          Musik-Timeline App
+        </Typography>
+        <Typography variant="body1" sx={{ marginBottom: 3 }}>
+          Erstelle deine eigene Musik-Timeline, indem du dich mit deinem Spotify-Konto anmeldest. Verfolge deine Lieblingskünstler und Songs!
+        </Typography>
+        <Button href={authUrl} variant="contained" sx={{ backgroundColor: "#1DB954", color: "#fff", padding: "12px 24px", fontSize: "16px", borderRadius: 2, textTransform: "none", "&:hover": { backgroundColor: "#1aa34a" } }}>
+          Mit Spotify anmelden
+        </Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default SpotifyAuth;
+
