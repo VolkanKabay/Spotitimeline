@@ -3,6 +3,7 @@
 ## Description
 
 The Spotitimeline App allows users to create their own music timeline by logging in with their Spotify account. Track your favorite artists, songs, and more! This app leverages the Spotify API to fetch data about users' top tracks and libraries.
+![image](https://github.com/user-attachments/assets/a4496e69-b1e3-422c-b114-391790180ae3)
 
 ## Features
 
