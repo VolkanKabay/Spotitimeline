@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Typography, Button, Box } from "@mui/material";
 
 const SpotifyAuth: React.FC = () => {
+  //* Replace the client id with your own Spotify API credentials if you have cloned the repository and put the redirect uri as the one you have set in your Spotify API dashboard
   const clientId = "3bf2d655774c4133831508748165f80c";
   const redirectUri = "http://localhost:5173/callback";
   const scope = "user-top-read user-library-read";
