@@ -1,8 +1,8 @@
-# Musik-Timeline App
+# Spotify Timeline - A Web Application for interesting information about your personal Spotify data.
 
 ## Description
 
-The Musik-Timeline App allows users to create their own music timeline by logging in with their Spotify account. Track your favorite artists, songs, and more! This app leverages the Spotify API to fetch data about users' top tracks and libraries.
+The Spotitimeline App allows users to create their own music timeline by logging in with their Spotify account. Track your favorite artists, songs, and more! This app leverages the Spotify API to fetch data about users' top tracks and libraries.
 
 ## Features
 
@@ -21,8 +21,8 @@ The Musik-Timeline App allows users to create their own music timeline by loggin
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/your-username/music-timeline-app.git
-    cd music-timeline-app
+    git clone https://github.com/VolkanKabay/Spotitimeline.git
+    cd Spotitimeline
     ```
 
 2. Install dependencies:
