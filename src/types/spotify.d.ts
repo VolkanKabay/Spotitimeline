@@ -9,6 +9,7 @@ export interface Artist {
 
 export interface Track {
   id: string;
+  artists: Artist[];
   external_urls: { spotify: string };
   popularity: number;
   name: string;

@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Callback from "./Callback";
-import SpotifyAuth from "./SpotifyAuth";
-import Timeline from "./Timeline";
-
+import Callback from "./components/Callback";
+import SpotifyAuth from "./components/SpotifyAuth";
+import Timeline from "./components/Timeline";
+import "./App.css";
 const App: React.FC = () => {
   return (
     <Router>
