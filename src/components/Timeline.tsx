@@ -309,15 +309,6 @@ const Timeline = () => {
                     Album: {track.album.name}
                   </Typography>
                 </CardContent>
-                <IconButton
-                  sx={{ position: "absolute", top: 8, right: 8 }}
-                  color="primary"
-                  size="small"
-                >
-                  <Tooltip title="Mehr Infos">
-                    <InfoIcon />
-                  </Tooltip>
-                </IconButton>
               </Card>
             </Grid>
           ))}
