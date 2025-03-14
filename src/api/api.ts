@@ -22,7 +22,7 @@ export const getTopTracks = async () => {
 
 export const getTopTracksWithTimeRange = async (timeRange: string) => {
   const response = await axios.get(
-    `https://api.spotify.com/v1/me/top/tracks?time_range=${timeRange}&limit=50`,
+    `https://api.spotify.com/v1/me/top/tracks?time_range=${timeRange}&limit=30`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -34,7 +34,7 @@ export const getTopTracksWithTimeRange = async (timeRange: string) => {
 
 export const getTopArtistsWithTimeRange = async (timeRange: string) => {
   const response = await axios.get(
-    `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}&limit=50`,
+    `https://api.spotify.com/v1/me/top/artists?time_range=${timeRange}&limit=30`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -63,13 +63,12 @@ export const getTopTrackForArtist = async (artistId: string) => {
         },
       }
     );
-    // Get the track with the highest popularity
     const topTrack = response.data.tracks.reduce(
       (maxTrack: { popularity: number }, track: { popularity: number }) =>
         track.popularity > maxTrack.popularity ? track : maxTrack
     );
 
-    return topTrack.name; // Return the track name of the most popular track
+    return topTrack.name;
   } catch (error) {
     console.error("Error fetching top track:", error);
     return null;

@@ -13,7 +13,6 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Tooltip,
   IconButton,
   Link,
 } from "@mui/material";
@@ -32,7 +31,6 @@ import {
   getTopTracksWithTimeRange,
   getTopTrackForArtist,
 } from "../api/api";
-import InfoIcon from "@mui/icons-material/Info";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
@@ -94,7 +92,7 @@ const Timeline = () => {
     labels: topArtists.map((artist) => artist.name),
     datasets: [
       {
-        label: "Beliebtheit",
+        label: "Wiedergaben",
         data: topArtists.map((artist) => artist.popularity),
         backgroundColor: "#1DB954",
         borderColor: "#1DB954",
@@ -171,7 +169,7 @@ const Timeline = () => {
               gutterBottom
               sx={{ textAlign: "center", fontWeight: "bold" }}
             >
-              Top Künstler (Beliebtheit)
+              Top Künstler (Wiedergaben)
             </Typography>
             <Bar
               data={artistChartData}
