@@ -208,6 +208,7 @@ const Timeline = () => {
           <Paper
             elevation={6}
             sx={{
+              width: "85%",
               padding: 3,
               borderRadius: 2,
               flexGrow: 1,
