@@ -37,7 +37,7 @@ The Spotitimeline App allows users to create their own music timeline by logging
 
 4. Run the app locally:
     ```bash
-    npm start
+    npm run dev
     ```
 
 5. The app will be available at `http://localhost:5173`.
