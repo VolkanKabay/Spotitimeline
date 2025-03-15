@@ -1,9 +1,11 @@
 # TimelineSpotify- A Web Application for interesting information about your personal Spotify data.
 
 ## Description
-Demo at: https://timeline-spotify.vercel.app/timeline (Wont work because of spotify api restrictions)
 The TimelineSpotify App allows users to create their own music timeline by logging in with their Spotify account. Track your favorite artists, songs, and more! This app leverages the Spotify API to fetch data about users' top tracks and libraries.
 ![image](https://github.com/user-attachments/assets/90606a93-9920-480e-93d6-42dc2931113c)
+
+
+Demo at: https://timeline-spotify.vercel.app/timeline (Wont work because of spotify api restrictions)
 
 ## Features
 
