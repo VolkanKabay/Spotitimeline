@@ -16,7 +16,6 @@ import {
   ButtonGroup,
 } from "@mui/material";
 import AlbumIcon from "@mui/icons-material/Album";
-import EqualizerIcon from "@mui/icons-material/Equalizer";
 
 import { Track } from "../types/spotify";
 import { getTopTracksWithTimeRange } from "../api/api";
