@@ -4,6 +4,7 @@ import Callback from "./components/Callback";
 import SpotifyAuth from "./components/SpotifyAuth";
 import Timeline from "./components/Timeline";
 import Tracks from "./components/Tracks";
+import "./App.css";
 const App: React.FC = () => {
   return (
     <Router>
