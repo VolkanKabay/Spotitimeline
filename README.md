@@ -91,7 +91,7 @@ const SpotifyAuth: React.FC = () => {
           variant="h3"
           sx={{ fontWeight: "bold", marginBottom: 2, color: "#1DB954" }}
         >
-          Musik-Timeline App
+         TimelineSpotify
         </Typography>
         <Typography variant="body1" sx={{ marginBottom: 3 }}>
           Erstelle deine eigene Musik-Timeline, indem du dich mit deinem
