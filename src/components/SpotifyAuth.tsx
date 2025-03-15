@@ -9,11 +9,11 @@ import {
   ButtonGroup,
 } from "@mui/material";
 import { theme } from "../theme/theme";
-import Footer from "./Footer";
 
 const SpotifyAuth: React.FC = () => {
   //* Replace the client id with your own Spotify API credentials if you have cloned the repository and put the redirect uri as the one you have set in your Spotify API dashboard
-  const clientId = "3bf2d655774c4133831508748165f80c";
+  const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+  console.log(clientId);
   const redirectUri = "http://localhost:5173/callback";
   const scope = "user-top-read user-library-read";
   const responseType = "token";
