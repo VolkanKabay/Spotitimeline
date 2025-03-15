@@ -1,4 +1,4 @@
-# Spotify Timeline - A Web Application for interesting information about your personal Spotify data.
+# TimelineSpotify- A Web Application for interesting information about your personal Spotify data.
 
 ## Description
 
