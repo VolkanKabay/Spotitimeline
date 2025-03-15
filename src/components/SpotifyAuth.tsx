@@ -16,7 +16,7 @@ const SpotifyAuth: React.FC = () => {
   const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
   console.log(clientId);
   const redirectUri = "http://localhost:5173/callback";
-  const scope = "user-top-read user-library-read";
+  const scope = "user-top-read";
   const responseType = "token";
 
   const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`;
