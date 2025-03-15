@@ -15,7 +15,7 @@ const SpotifyAuth: React.FC = () => {
   // VITE_SPOTIFY_CLIENT_ID=your_client_id_here
   const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
   console.log(clientId);
-  const redirectUri = "https://timeline-spotify.vercel.app/callback";
+  const redirectUri = "https://timeline-spotify.vercel.app";
   const scope = "user-top-read";
   const responseType = "token";
 
