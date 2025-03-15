@@ -2,8 +2,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/index.tsx",
-      "use": "@vercel/static-build"
+      "src": "/tracks",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -12,8 +12,8 @@
       "dest": "/callback"
     },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "/",
+      "dest": "/"
     }
   ]
 }
