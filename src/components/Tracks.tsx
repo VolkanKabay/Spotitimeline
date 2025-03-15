@@ -22,6 +22,7 @@ import { Track } from "../types/spotify";
 import { getTopTracksWithTimeRange } from "../api/api";
 import { theme } from "../theme/theme";
 import Footer from "./Footer";
+import { FaSpotify } from "react-icons/fa";
 
 const Tracks = () => {
   const [topTracks, setTopTracks] = useState<Track[]>([]);
@@ -211,15 +212,20 @@ const Tracks = () => {
                         </Typography>
                       </Box>
                     </Tooltip>
-                    <Tooltip title="Popularity">
-                      <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <EqualizerIcon
-                          fontSize="small"
-                          sx={{ mr: 0.5, color: "#1DB954" }}
+                    <Tooltip title="Play on Spotify">
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                        }}
+                      >
+                        <FaSpotify
+                          style={{
+                            fontSize: "1.5rem",
+                            color: "#1DB954",
+                            display: "flex",
+                          }}
                         />
-                        <Typography variant="body2" color="text.secondary">
-                          {track.popularity}%
-                        </Typography>
                       </Box>
                     </Tooltip>
                   </Box>
