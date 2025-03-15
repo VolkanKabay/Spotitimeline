@@ -79,16 +79,6 @@ const Tracks = () => {
       <Container maxWidth="lg" sx={{ py: 6 }}>
         {/* Header */}
         <Box sx={{ mb: 6, textAlign: "center" }}>
-          <Button
-            variant="outlined"
-            color="primary"
-            onClick={() => {
-              window.location.href = "/timeline";
-            }}
-            sx={{ mb: 4 }}
-          >
-            Back to All Analytics
-          </Button>
           <Typography
             variant="h2"
             component="h1"
@@ -241,6 +231,16 @@ const Tracks = () => {
 
         {/* Footer */}
         <Box sx={{ mt: 8, mb: 2, textAlign: "center" }}>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              window.location.href = "/timeline";
+            }}
+            sx={{ mb: 4, height: 48, width: 200 }}
+          >
+            Back to All Analytics
+          </Button>
           <Divider sx={{ mb: 4 }} />
           <Typography variant="body2" color="text.secondary">
             Data provided by Spotify API. This dashboard visualizes your

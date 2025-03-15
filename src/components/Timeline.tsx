@@ -74,6 +74,9 @@ const Timeline = () => {
       .then(([tracksData, artistsData]) => {
         setTopTracks(tracksData.items);
         setTopArtists(artistsData.items);
+        if (currentArtistIndex >= artistsData.items.length) {
+          setCurrentArtistIndex(artistsData.items.length - 1);
+        }
         setLoading(false);
       })
       .catch((error) => {
