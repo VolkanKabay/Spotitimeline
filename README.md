@@ -23,8 +23,8 @@ The TimelineSpotify App allows users to create their own music timeline by loggi
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/VolkanKabay/Spotitimeline.git
-   cd Spotitimeline
+   git clone https://github.com/VolkanKabay/TimelineSpotify.git
+   cd TimelineSpotify
    ```
 
 2. Install dependencies:
