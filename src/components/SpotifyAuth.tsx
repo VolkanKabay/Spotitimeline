@@ -1,5 +1,15 @@
 import React from "react";
-import { Container, Typography, Button, Box } from "@mui/material";
+import {
+  Container,
+  Typography,
+  Button,
+  Box,
+  ThemeProvider,
+  CssBaseline,
+  ButtonGroup,
+} from "@mui/material";
+import { theme } from "../theme/theme";
+import Footer from "./Footer";
 
 const SpotifyAuth: React.FC = () => {
   //* Replace the client id with your own Spotify API credentials if you have cloned the repository and put the redirect uri as the one you have set in your Spotify API dashboard
@@ -11,55 +21,89 @@ const SpotifyAuth: React.FC = () => {
   const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}`;
 
   return (
-    <Container
-      maxWidth="sm"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-      }}
-    >
-      <Box
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Container
+        maxWidth="sm"
         sx={{
-          textAlign: "center",
-          marginBottom: 4,
-          padding: 4,
-          backgroundColor: "#ffffff",
-          borderRadius: 4,
-          boxShadow: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          height: "100vh",
         }}
       >
-        <Typography
-          variant="h3"
-          sx={{ fontWeight: "bold", marginBottom: 2, color: "#1DB954" }}
-        >
-          Musik-Timeline App
-        </Typography>
-        <Typography variant="body1" sx={{ marginBottom: 3 }}>
-          Erstelle deine eigene Musik-Timeline, indem du dich mit deinem
-          Spotify-Konto anmeldest. Verfolge deine Lieblingskünstler und Songs!
-        </Typography>
-        <Button
-          href={authUrl}
-          variant="contained"
+        <Box
           sx={{
-            backgroundColor: "#1DB954",
-            color: "#fff",
-            padding: "12px 24px",
-            fontSize: "16px",
-            borderRadius: 2,
-            textTransform: "none",
-            "&:hover": {
-              backgroundColor: "#1aa34a",
-            },
+            textAlign: "center",
+            marginBottom: 4,
+            padding: 4,
+            borderRadius: 4,
+            boxShadow: 2,
+            backgroundColor: theme.palette.background.paper,
           }}
         >
-          Mit Spotify anmelden
-        </Button>
+          <Typography
+            variant="h3"
+            sx={{
+              fontWeight: "bold",
+              marginBottom: 2,
+              color: theme.palette.primary.main,
+            }}
+          >
+            TimelineSpotify
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              marginBottom: 4,
+              color: theme.palette.text.secondary,
+            }}
+          >
+            Visualize your Spotify listening history, top tracks, and more!
+          </Typography>
+          <Typography
+            sx={{
+              marginBottom: 4,
+              color: theme.palette.text.secondary,
+            }}
+          >
+            What would you like to see?
+          </Typography>
+          <ButtonGroup>
+            <Button href={authUrl} variant="outlined" color="primary">
+              Top Tracks
+            </Button>
+            <Button href={authUrl} variant="outlined" color="primary">
+              Top Artists
+            </Button>
+          </ButtonGroup>
+        </Box>
+      </Container>
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 2,
+          left: 2,
+          right: 2,
+          textAlign: "center",
+          color: theme.palette.text.secondary,
+        }}
+      >
+        <Typography variant="body2">
+          Made with ❤️ by {""}
+          <a
+            href="https://github.com/VolkanKabay/"
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: theme.palette.primary.main }}
+          >
+            Volkan Kabay
+          </a>
+        </Typography>
+        <br />
       </Box>
-    </Container>
+    </ThemeProvider>
   );
 };
 

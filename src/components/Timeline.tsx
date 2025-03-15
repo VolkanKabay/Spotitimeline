@@ -46,6 +46,7 @@ import HistoryIcon from "@mui/icons-material/History";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { Artist, Track } from "../types/spotify";
 import { theme } from "../theme/theme";
+import Footer from "./Footer";
 
 ChartJS.register(
   CategoryScale,
@@ -585,14 +586,7 @@ const Timeline = () => {
 
         {/* Footer */}
         <Box sx={{ mt: 8, mb: 2, textAlign: "center" }}>
-          <Divider sx={{ mb: 4 }} />
-          <Typography variant="body2" color="text.secondary">
-            Data provided by Spotify API. This dashboard visualizes your
-            personal listening habits and preferences.
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            © {new Date().getFullYear()} TimelineSpotify
-          </Typography>
+          <Footer />
         </Box>
       </Container>
     </ThemeProvider>

@@ -22,6 +22,7 @@ import EqualizerIcon from "@mui/icons-material/Equalizer";
 import { Track } from "../types/spotify";
 import { getTopTracksWithTimeRange } from "../api/api";
 import { theme } from "../theme/theme";
+import Footer from "./Footer";
 
 const Tracks = () => {
   const [topTracks, setTopTracks] = useState<Track[]>([]);
@@ -241,14 +242,7 @@ const Tracks = () => {
           >
             Back to All Analytics
           </Button>
-          <Divider sx={{ mb: 4 }} />
-          <Typography variant="body2" color="text.secondary">
-            Data provided by Spotify API. This dashboard visualizes your
-            personal listening habits and preferences.
-          </Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            © {new Date().getFullYear()} TimelineSpotify
-          </Typography>
+          <Footer />
         </Box>
       </Container>
     </ThemeProvider>
