@@ -7,7 +7,9 @@ const Footer = () => {
       <Divider sx={{ mb: 4 }} />
       <Typography variant="body2" color="text.secondary">
         Data provided by Spotify API. This dashboard visualizes your personal
-        listening habits and preferences.
+        listening habits and preferences. We are not related to Spotify AB or
+        any of it´s partners in any way. All images are copyrighted by their
+        respective copyright owners.
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
         © {new Date().getFullYear()} &nbsp;
