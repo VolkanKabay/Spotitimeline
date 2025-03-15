@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import AlbumIcon from "@mui/icons-material/Album";
 import EqualizerIcon from "@mui/icons-material/Equalizer";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+
 import { Track } from "../types/spotify";
 import { getTopTracksWithTimeRange } from "../api/api";
 import { theme } from "../theme/theme";
@@ -44,19 +44,6 @@ const Tracks = () => {
 
   const handleCardClick = (url: string | URL | undefined) => {
     window.open(url, "_blank");
-  };
-
-  const formatTimeRange = (range: string) => {
-    switch (range) {
-      case "short_term":
-        return "Last Month";
-      case "medium_term":
-        return "Last 6 Months";
-      case "long_term":
-        return "All Time";
-      default:
-        return "Custom";
-    }
   };
 
   if (loading) {
@@ -89,7 +76,6 @@ const Tracks = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-
       <Container maxWidth="lg" sx={{ py: 6 }}>
         {/* Header */}
         <Box sx={{ mb: 6, textAlign: "center" }}>
