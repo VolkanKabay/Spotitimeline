@@ -46,6 +46,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { Artist, Track } from "../types/spotify";
 import { theme } from "../theme/theme";
 import Footer from "./Footer";
+import { FaSpotify } from "react-icons/fa";
 
 ChartJS.register(
   CategoryScale,
@@ -485,12 +486,14 @@ const Timeline = () => {
                         >
                           {track.name}
                         </Typography>
+
                         <Chip
                           label={`#${index + 1}`}
                           color="primary"
                           size="small"
                         />
                       </Box>
+
                       <Typography
                         variant="body2"
                         color="text.secondary"
@@ -499,10 +502,12 @@ const Timeline = () => {
                           overflow: "hidden",
                           textOverflow: "ellipsis",
                           whiteSpace: "nowrap",
+                          mr: 1,
                         }}
                       >
                         {track.artists.map((artist) => artist.name).join(", ")}
                       </Typography>
+
                       <Box
                         sx={{
                           display: "flex",
@@ -535,20 +540,20 @@ const Timeline = () => {
                             </Typography>
                           </Box>
                         </Tooltip>
-                        <Tooltip title="Popularity">
+                        <Tooltip title="Play on Spotify">
                           <Box
                             sx={{
                               display: "flex",
                               alignItems: "center",
                             }}
                           >
-                            <EqualizerIcon
-                              fontSize="small"
-                              sx={{ mr: 0.5, color: "#1DB954" }}
+                            <FaSpotify
+                              style={{
+                                fontSize: "1.5rem",
+                                color: "#1DB954",
+                                display: "flex",
+                              }}
                             />
-                            <Typography variant="body2" color="text.secondary">
-                              {track.popularity}%
-                            </Typography>
                           </Box>
                         </Tooltip>
                       </Box>
