@@ -11,7 +11,8 @@ import {
 import { theme } from "../theme/theme";
 
 const SpotifyAuth: React.FC = () => {
-  //* Replace the client id with your own Spotify API credentials if you have cloned the repository and put the redirect uri as the one you have set in your Spotify API dashboard
+  // Replace the client id with your own Spotify API credentials, create a .env file in the root of the project and add the following line:
+  // VITE_SPOTIFY_CLIENT_ID=your_client_id_here
   const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
   console.log(clientId);
   const redirectUri = "http://localhost:5173/callback";
